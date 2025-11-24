@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SiteAnalysisCS/SiteAnalysisCS.csproj" />
+  <Project Path="SiteAnalysisCSTest/SiteAnalysisCSTest.csproj" />
+</Solution>
