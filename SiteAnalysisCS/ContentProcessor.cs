@@ -71,9 +71,14 @@
 
         public void ProcessContent(string content)
         {
-            var words = content.Split([' ', '\n', '\r', '\t', '.', ',', '!', '?', '"', '-'], StringSplitOptions.RemoveEmptyEntries);
+            var words = content.Split([' ', '\n', '\r', '\t', '.', ',', '!', '?', '"', '-', '(', ')'], StringSplitOptions.RemoveEmptyEntries);
             foreach (var word in words)
             {
+                if (word.Length < 2)
+                {
+                    continue;
+                }
+
                 if (SkipWords.Contains(word.ToLower()))
                 {
                     continue;
