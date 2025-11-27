@@ -6,10 +6,6 @@ namespace SiteAnalysisCS
     {
         private static readonly ILogger _logger = Log.ForContext<StartPageWebScraper>();
 
-        public StartPageWebScraper()
-        {
-        }
-
         public string Name()
         {
             return "StartPage";

@@ -71,7 +71,9 @@
 
         public void ProcessContent(string content)
         {
-            var words = content.Split([' ', '\n', '\r', '\t', '.', ',', '!', '?', '"', '-', '(', ')'], StringSplitOptions.RemoveEmptyEntries);
+            var words = content
+                .Replace("&nbsp;", " ")
+                .Split([' ', '\n', '\r', '\t', '.', ',', '!', '?', '"', '-', '(', ')', ':'], StringSplitOptions.RemoveEmptyEntries);
             foreach (var word in words)
             {
                 if (word.Length < 2)
@@ -79,23 +81,24 @@
                     continue;
                 }
 
-                if (SkipWords.Contains(word.ToLower()))
+                var wordLower = word.ToLower();
+                if (SkipWords.Contains(wordLower))
                 {
                     continue;
                 }
 
-                if (decimal.TryParse(word, out var number))
+                if (decimal.TryParse(wordLower, out _))
                 {
                     continue;
                 }
 
-                if (_wordCounts.TryGetValue(word, out var count))
+                if (_wordCounts.TryGetValue(wordLower, out var count))
                 {
-                    _wordCounts[word] = count + 1;
+                    _wordCounts[wordLower] = count + 1;
                 }
                 else
                 {
-                    _wordCounts[word] = 1;
+                    _wordCounts[wordLower] = 1;
                 }
             }
         }
