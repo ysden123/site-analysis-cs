@@ -49,5 +49,10 @@ namespace SiteAnalysisCS
             //MessageBox.Show("This would open the News Start Page.", "News Start Page", MessageBoxButton.OK, MessageBoxImage.Information);
             CC.Content = new StartPageControl();
         }
+
+        private void KnopkaMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            CC.Content = new KnopkaControl();
+        }
     }
 }

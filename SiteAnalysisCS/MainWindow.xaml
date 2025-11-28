@@ -10,6 +10,7 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Actions">
                 <MenuItem Header="News startpage" Click="NewsStartPageMenuItemClick"/>
+                <MenuItem Header="Knopka" Click="KnopkaMenuItemClick"/>
             </MenuItem>
         </Menu>
         <ContentControl x:Name="CC"/>
