@@ -107,7 +107,7 @@
         {
             return [.. (from item in _wordCounts
                         where item.Value > 1
-                       orderby item.Value descending
+                       orderby item.Value descending , item.Key ascending
                        select new WordData { Word = item.Key, Count = item.Value }).Take(15)];
         }
     }
