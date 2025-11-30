@@ -46,13 +46,17 @@ namespace SiteAnalysisCS
 
         private void NewsStartPageMenuItemClick(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("This would open the News Start Page.", "News Start Page", MessageBoxButton.OK, MessageBoxImage.Information);
             CC.Content = new StartPageControl();
         }
 
         private void KnopkaMenuItemClick(object sender, RoutedEventArgs e)
         {
             CC.Content = new KnopkaControl();
+        }
+
+        private void IsrageoMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            CC.Content = new IsrageoControl();
         }
     }
 }
