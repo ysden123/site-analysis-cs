@@ -29,7 +29,7 @@ namespace SiteAnalysisCS
                     var siteScraper = new IsrageoWebScraper();
                     Dispatcher.Invoke(new Action(() =>
                     {
-                        WordDataListView.ItemsSource = siteScraper.Scrap(siteScraper.Url()).Result;
+                        WordDataListView.ItemsSource = siteScraper.Scrap().Result;
                     }));
                 }
                 catch (Exception)

@@ -15,7 +15,7 @@ namespace SiteAnalysisCS
             return "https://news.knopka.ca/";
         }
 
-        public Task<List<WordData>> Scrap(string url)
+        public Task<List<WordData>> Scrap()
         {
             return Task.Run(async () =>
             {
@@ -23,7 +23,7 @@ namespace SiteAnalysisCS
                 {
                     var contentProcessor = new ContentProcessor();
                     var htmlWeb = new HtmlAgilityPack.HtmlWeb();
-                    var document = await htmlWeb.LoadFromWebAsync(url);
+                    var document = await htmlWeb.LoadFromWebAsync(Url());
                     var articleNodes = document.DocumentNode.SelectNodes("//div[@class='recent-headlines scroll-div']/div[@class='scrollContainer']/ul[@class='news-widget']/li");
                     if (articleNodes != null)
                     {

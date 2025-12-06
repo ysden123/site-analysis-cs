@@ -16,7 +16,7 @@ namespace SiteAnalysisCS
             return "https://www.isrageo.com/";
         }
 
-        public Task<List<WordData>> Scrap(string url)
+        public Task<List<WordData>> Scrap()
         {
             return Task.Run(async () =>
             {
@@ -24,7 +24,7 @@ namespace SiteAnalysisCS
                 {
                     var contentProcessor = new ContentProcessor();
                     var htmlWeb = new HtmlAgilityPack.HtmlWeb();
-                    var document = await htmlWeb.LoadFromWebAsync(url);
+                    var document = await htmlWeb.LoadFromWebAsync(Url());
                     var articleNodes = document.DocumentNode.SelectNodes("//div[@class='widget widget_recent_entries']/ul/li/a");
                     if (articleNodes != null)
                     {

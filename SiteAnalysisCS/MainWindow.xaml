@@ -12,6 +12,7 @@
                 <MenuItem Header="News startpage" Click="NewsStartPageMenuItemClick"/>
                 <MenuItem Header="Knopka" Click="KnopkaMenuItemClick"/>
                 <MenuItem Header="Isrageo" Click="IsrageoMenuItemClick"/>
+                <MenuItem Header="Radio Svoboda" Click="RadioSvobodaMenuItemClick"/>
             </MenuItem>
         </Menu>
         <ContentControl x:Name="CC"/>

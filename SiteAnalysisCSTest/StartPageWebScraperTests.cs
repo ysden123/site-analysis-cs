@@ -11,13 +11,14 @@ public class StartPageWebScraperTests
         IWebScraper scraper = new StartPageWebScraper();
         Assert.AreEqual("StartPage", scraper.Name());
     }
+
     [TestMethod]
     public async Task TestScrap()
     {
         try
         {
             IWebScraper scraper = new StartPageWebScraper();
-            var result = await scraper.Scrap(scraper.Url());
+            var result = await scraper.Scrap();
             Assert.IsNotNull(result);
             Assert.IsNotEmpty(result);
 

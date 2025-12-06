@@ -2,18 +2,18 @@
 
 namespace SiteAnalysisCS
 {
-    public class StartPageWebScraper : IWebScraper
+    public class RadioSvobodaWebScraper : IWebScraper
     {
-        private static readonly ILogger _logger = Log.ForContext<StartPageWebScraper>();
+        private static readonly ILogger _logger = Log.ForContext<RadioSvobodaWebScraper>();
 
         public string Name()
         {
-            return "StartPage";
+            return "Radio Svoboda";
         }
 
         public string Url()
         {
-            return "https://news.startpage.co.il/russian/";
+            return "https://www.svoboda.org/news";
         }
 
         public Task<List<WordData>> Scrap()
@@ -25,7 +25,7 @@ namespace SiteAnalysisCS
                     var contentProcessor = new ContentProcessor();
                     var htmlWeb = new HtmlAgilityPack.HtmlWeb();
                     var document = await htmlWeb.LoadFromWebAsync(Url());
-                    var articleNodes = document.DocumentNode.SelectNodes("//ul[@class='menu']");
+                    var articleNodes = document.DocumentNode.SelectNodes("//h4[@class='media-block__title media-block__title--size-3 media-block__title--25']");
                     if (articleNodes != null)
                     {
                         foreach (var articleNode in articleNodes)
@@ -38,11 +38,10 @@ namespace SiteAnalysisCS
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex, "Error during scraping StartPage");
+                    _logger.Error(ex, "Error during scraping Radio Svoboda");
                     throw;
                 }
             });
         }
     }
-
 }

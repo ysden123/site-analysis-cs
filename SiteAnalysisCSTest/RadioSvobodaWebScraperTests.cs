@@ -3,20 +3,23 @@ using SiteAnalysisCS;
 namespace SiteAnalysisCSTest;
 
 [TestClass]
-public class IsrageoWebScraperTests
+public class RadioSvobodaWebScraperTests
 {
+    [TestMethod]
+    public void TestCtor()
+    {
+        IWebScraper scraper = new RadioSvobodaWebScraper();
+        Assert.AreEqual("Radio Svoboda", scraper.Name());
+    }
+
     [TestMethod]
     public async Task TestScrap()
     {
         try
         {
-            IWebScraper scraper = new IsrageoWebScraper();
+            IWebScraper scraper = new RadioSvobodaWebScraper();
             var result = await scraper.Scrap();
             Assert.IsNotNull(result);
-            if (result.Count == 0)
-            {
-                return;
-            }
             Assert.IsNotEmpty(result);
 
             foreach (var wordData in result)

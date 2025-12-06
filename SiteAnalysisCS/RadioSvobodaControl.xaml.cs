@@ -5,11 +5,11 @@ using System.Windows.Input;
 namespace SiteAnalysisCS
 {
     /// <summary>
-    /// Interaction logic for KnopkaControl.xaml
+    /// Interaction logic for RadioSvobodaControl.xaml
     /// </summary>
-    public partial class KnopkaControl : UserControl
+    public partial class RadioSvobodaControl : UserControl
     {
-        public KnopkaControl()
+        public RadioSvobodaControl()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace SiteAnalysisCS
             {
                 try
                 {
-                    var siteScraper = new KnopkaWebScraper();
+                    var siteScraper = new RadioSvobodaWebScraper();
                     Dispatcher.Invoke(new Action(() =>
                     {
                         WordDataListView.ItemsSource = siteScraper.Scrap().Result;

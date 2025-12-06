@@ -11,7 +11,7 @@ public class KnopkaWebScraperTests
         try
         {
             IWebScraper scraper = new KnopkaWebScraper();
-            var result = await scraper.Scrap(scraper.Url());
+            var result = await scraper.Scrap();
             Assert.IsNotNull(result);
             Assert.IsNotEmpty(result);
 

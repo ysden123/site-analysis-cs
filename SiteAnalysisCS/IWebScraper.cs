@@ -11,10 +11,9 @@
         /// <summary>
         /// Asynchronously extracts word data from the specified web page URL.
         /// </summary>
-        /// <param name="url">The URL of the web page to scrape for word data. Must be a valid, non-empty HTTP or HTTPS URL.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains a list of <see cref="WordData"/>
         /// objects extracted from the web page. The list will be empty if no word data is found.</returns>
-        Task<List<WordData>> Scrap(string url);
+        Task<List<WordData>> Scrap();
 
         /// <summary>
         /// Gets the name associated with the scraper.

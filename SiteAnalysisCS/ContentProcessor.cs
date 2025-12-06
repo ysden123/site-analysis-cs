@@ -73,6 +73,7 @@
         {
             var words = content
                 .Replace("&nbsp;", " ")
+                .Replace("&quot;", "")
                 .Split([' ', '\n', '\r', '\t', '.', ',', '!', '?', '"', '-', '(', ')', ':'], StringSplitOptions.RemoveEmptyEntries);
             foreach (var word in words)
             {

@@ -58,5 +58,10 @@ namespace SiteAnalysisCS
         {
             CC.Content = new IsrageoControl();
         }
+
+        private void RadioSvobodaMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            CC.Content = new RadioSvobodaControl();
+        }
     }
 }
